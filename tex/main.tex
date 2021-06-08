@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, hmargin={2.8cm, 2.8cm}, vmargin={2.5cm, 2.5cm}]{geometry}
+\usepackage{eso-pic}
+\usepackage{graphicx} 
+\usepackage{amsmath}
+\usepackage{tabto}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumerate}
+\usepackage{txfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage[space]{grffile}
+\usepackage{tabularx}
+\usepackage{color, colortbl}
+\usepackage{xcolor}
+\usepackage{tocloft}
+\usepackage{subfiles}
+\lstset { %
+    language=C++,
+    backgroundcolor=\color{black!5},
+    basicstyle=\footnotesize,
+}
+\hypersetup{breaklinks=true}
+
+\def \ColourPDF {include/ku-farve}
+\def \TitlePDF   {include/nat-en}
+
+\title{
+  \vspace{3cm}
+  \Huge{Time Series Forecasting} \\
+  \Large{}
+}
+
+\author{
+  \Large{Mikkel Godtfredsen}
+  \\ \texttt{xrq510@alumni.ku.dk}
+  \\ \texttt{\url{https://github.com/mikkelgod/Bachelors-Thesis}}
+}
+
+\date{14. June 2021}
+
+\begin{document}
+
+\AddToShipoutPicture*{\put(0,0){\includegraphics*[viewport=0 0 700 600]{\ColourPDF}}}
+\AddToShipoutPicture*{\put(0,602){\includegraphics*[viewport=0 600 700 1600]{\ColourPDF}}}
+
+\AddToShipoutPicture*{\put(0,0){\includegraphics*{\TitlePDF}}}
+
+\clearpage\maketitle
+\thispagestyle{empty}
+
+\vfill
+\Large{Supervisor: Stefan Horst Sommer}
+
+\begin{normalsize}
+
+\newpage
+            %----------------- Abstract -----------------% 
+\subfile{main_abstract}
+
+\newpage
+            %------------ Table of Contents -------------% 
+\tableofcontents
+
+\newpage
+            %--------------- Introduction ---------------% 
+\subfile{main_introduction}
+
+            %--------------- The Dataset ----------------% 
+\subfile{main_dataset}
+
+            %----------------- LSTM-RNN -----------------% 
+\subfile{main_lstmrnn}
+
+            %--------------- Transformers ---------------% 
+\subfile{main_transformers}
+
+            %---------------- Evaluation ----------------% 
+\subfile{main_evaluation}
+
+            %---------------- Discussion ----------------% 
+\subfile{main_discussion}
+
+            %---------------- Conclusion ----------------% 
+\subfile{main_conclusion}
+
+            %--------------- Bibliography ---------------% 
+\newpage
+\bibliographystyle{amsalpha}
+\addcontentsline{toc}{section}{References}
+\bibliography{ref}
+\nocite{*}
+
+%\newpage
+            %----------------- Appendix -----------------% 
+%\subfile{main_appendix}
+
+\end{normalsize}
+\end{document}

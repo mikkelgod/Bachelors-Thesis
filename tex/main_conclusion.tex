@@ -1,0 +1,10 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\section{Conclusion}
+
+Exploring the problem of predicting time series data, this project has shown what different methods of approaching the problem consist of and how they compare to each other. On one hand there was the LSTM model, representing the mainstream and more simple approach. In theory this type of model should be able to learn long term dependencies, and therefore should perform well in this domain of problems, however the LSTM model did not perform much better than simply predicting the mean values for multi-step predictions and got worse the longer the sequences it had to predict were. On the other hand there was the transformer, utilizing the concept of attention, making the model able to focus both on longer sequences and keeping the most important elements in view, while using masking to prevent the model from peeking ahead, and keeping the recurrent structure of the data with positional encoding. This all contributed to make predictions that were much closer to those of the actual data, and showing lower losses, than the LSTM did.\\
+The question whether the transformer would generalize well however is still left up for debate as the utilization of the data as well as the constraints of the experiments prevent the elicitation of a clear conclusion. \\
+And though it is impossible to specify the exact level of generalization and impact of each element of the transformer, this project is concluded with a partial confirmation of the idea that the transformer and attention definitely has a place in the space of  time series forecasting.
+
+
+\end{document}
